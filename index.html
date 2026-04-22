@@ -86,7 +86,7 @@
 >
 
   <!-- COLUNA ESQUERDA -->
-  <div class="flex h-full flex-col justify-between rounded-[28px] border border-white/10 bg-[#07101f]/80 p-8 shadow-[0_20px_80px_rgba(40,0,120,0.18)]">
+  <div class="flex h-full flex-col justify-between rounded-[28px] border border-white/10 bg-[#07101f]/80 p-6 shadow-[0_20px_80px_rgba(40,0,120,0.18)] md:p-8">
     
     <div>
       <h1 class="max-w-[560px] text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] md:text-5xl xl:text-[64px]">
@@ -105,11 +105,11 @@
     </div>
 
     <div class="mt-10">
-      <div class="flex flex-wrap gap-4">
+      <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
         
         <a
           href="#experiencia"
-          class="inline-flex items-center gap-2 rounded-xl bg-violet-500 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-violet-400"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-violet-500 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-violet-400 sm:w-auto"
         >
           Ver Projetos
         </a>
@@ -117,7 +117,7 @@
         <a
           href="https://wa.me/5598992337497"
           target="_blank"
-          class="inline-flex items-center justify-center gap-2 rounded-xl border border-violet-400/40 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/5"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-violet-400/40 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/5 sm:w-auto"
         >
           <i data-lucide="message-circle" class="h-4 w-4"></i>
           Entrar em Contato
@@ -125,27 +125,27 @@
 
       </div>
 
-      <ul class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-300">
+      <ul class="mt-8 grid grid-cols-2 gap-3 text-sm text-zinc-300 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3">
         <li>
-          <a href="#" class="inline-flex items-center gap-2 hover:text-violet-300">
+          <a href="https://github.com/devmarcosantonio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-violet-300 sm:p-0 sm:hover:bg-transparent">
             <i class="fa-brands fa-github w-4 text-center"></i>
             GitHub
           </a>
         </li>
         <li>
-          <a href="#" class="inline-flex items-center gap-2 hover:text-violet-300">
+          <a href="https://www.linkedin.com/in/marcos-branco-07019a233/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-violet-300 sm:p-0 sm:hover:bg-transparent">
             <i class="fa-brands fa-linkedin w-4 text-center"></i>
             LinkedIn
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/npc.marc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-violet-300">
+          <a href="https://www.instagram.com/npc.marc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-violet-300 sm:p-0 sm:hover:bg-transparent">
             <i class="fa-brands fa-instagram w-4 text-center"></i>
             @npc.marc
           </a>
         </li>
         <li>
-          <a href="mailto:mabp.contato@gmail.com" class="inline-flex items-center gap-2 hover:text-violet-300">
+          <a href="mailto:mabp.contato@gmail.com" class="inline-flex items-center gap-2 rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-violet-300 sm:p-0 sm:hover:bg-transparent">
             <i data-lucide="mail" class="h-4 w-4"></i>
             Email
           </a>
