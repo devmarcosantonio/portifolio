@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -13,6 +13,7 @@
 
     #inicio,
     #sobre,
+    #projetos,
     #habilidades,
     #experiencia,
     #contato {
@@ -29,6 +30,45 @@
     .reveal-on-scroll.is-visible {
       opacity: 1;
       transform: translateY(0) scale(1);
+    }
+
+    .project-gallery {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+
+    .project-gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .project-gallery > img {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+    }
+
+    .project-modal {
+      background: rgba(2, 6, 23, 0.78);
+      backdrop-filter: blur(8px);
+    }
+
+    .project-modal-panel {
+      max-height: calc(100vh - 3rem);
+      overflow: auto;
+    }
+
+    .project-modal-thumbs {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .project-modal-thumbs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .project-thumb-btn.is-active {
+      border-color: rgba(167, 139, 250, 0.85);
+      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.35);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -60,6 +100,7 @@
           <ul class="flex items-center gap-6 text-sm text-zinc-300">
             <li><a href="#inicio" class="transition hover:text-violet-400">Início</a></li>
             <li><a href="#sobre" class="transition hover:text-violet-400">Sobre</a></li>
+            <li><a href="#projetos" class="transition hover:text-violet-400">Projetos</a></li>
             <li><a href="#habilidades" class="transition hover:text-violet-400">Habilidades</a></li>
             <li><a href="#experiencia" class="transition hover:text-violet-400">Experiência</a></li>
             <li><a href="#contato" class="transition hover:text-violet-400">Contato</a></li>
@@ -108,7 +149,7 @@
       <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
         
         <a
-          href="#experiencia"
+          href="#projetos"
           class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-violet-500 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-violet-400 sm:w-auto"
         >
           Ver Projetos
@@ -272,6 +313,147 @@
 
 
 </section>
+      <!-- PROJETOS -->
+      <section
+        id="projetos"
+        class="reveal-on-scroll rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-violet-950/20 md:p-8"
+      >
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-violet-400">
+              <i data-lucide="layers-3" class="h-4 w-4"></i>
+              Projetos
+            </h2>
+            <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-300 md:text-base">
+              Aqui estão alguns projetos com imagens reais. 
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-6 lg:grid-cols-3">
+          <article class="reveal-on-scroll flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0c1127]">
+            <img src="imgs/projetos/gerenciador_de_emails/1.png" alt="Projeto Gerenciador de Emails" class="h-52 w-full object-cover" />
+            <div class="flex flex-1 flex-col p-5">
+              <!-- Edite aqui: titulo -->
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-bold text-white">Gerenciador de Emails</h3>
+                <span class="shrink-0 rounded-full border border-violet-400/40 bg-violet-500/10 px-2.5 py-1 text-[11px] font-medium text-violet-200">Atuação: Full Stack</span>
+              </div>
+              <!-- Edite aqui: descricao -->
+              <p class="mt-2 text-sm leading-6 text-zinc-400">
+                Sistema integrado ao email corporativo para classificar mensagens por urgência e priorizar atendimentos críticos para o time de qualidade e pós-venda de produtos.
+              </p>
+              <!-- Edite aqui: tecnologias -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">NestJS</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Node.js</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Next.js</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">SQL Server</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">TypeScript</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">shadcn/ui</span>
+              </div>
+              <!-- Edite aqui: imagens -->
+              <div class="project-gallery mt-4 flex gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible">
+                <img src="imgs/projetos/gerenciador_de_emails/1.png" alt="Tela 1 do projeto Gerenciador de Emails" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_emails/2.png" alt="Tela 2 do projeto Gerenciador de Emails" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_emails/3.png" alt="Tela 3 do projeto Gerenciador de Emails" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_emails/4.png" alt="Tela 4 do projeto Gerenciador de Emails" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_emails/5.png" alt="Tela 5 do projeto Gerenciador de Emails" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_emails/6.png" alt="Tela 6 do projeto Gerenciador de Emails" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+              </div>
+              <button
+                type="button"
+                data-open-project-modal
+                data-project-detail="Sistema integrado ao email oficial da empresa para classificar mensagens por urgência. Emails críticos e com ameaças recebem prioridade maior no fluxo. A solução foi feita para o time de qualidade e pós-venda de produtos. Também mantém controle completo de emails tratados e de quem tratou, apoiando auditoria e rastreabilidade. Fui responsável pelo projeto completo, do front-end ao back-end."
+                class="mt-auto inline-flex items-center gap-2 rounded-xl border border-violet-400/40 bg-violet-500/15 px-4 py-2 text-sm font-medium text-violet-200 transition hover:bg-violet-500/25"
+              >
+                <i data-lucide="zoom-in" class="h-4 w-4"></i>
+                Ver detalhes
+              </button>
+            </div>
+          </article>
+
+          <article class="reveal-on-scroll flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0c1127]">
+            <img src="imgs/projetos/gerenciador_de_projetos/1.png" alt="Projeto Gerenciador de Projetos" class="h-52 w-full object-cover" />
+            <div class="flex flex-1 flex-col p-5">
+              <!-- Edite aqui: titulo -->
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-bold text-white">Gerenciador de Projetos</h3>
+                <span class="shrink-0 rounded-full border border-violet-400/40 bg-violet-500/10 px-2.5 py-1 text-[11px] font-medium text-violet-200">Atuação: Full Stack</span>
+              </div>
+              <!-- Edite aqui: descricao -->
+              <p class="mt-2 text-sm leading-6 text-zinc-400">
+                Sistema de controle de tasks com quadro Kanban, visualização em Gantt e métricas de desempenho da equipe.
+              </p>
+              <!-- Edite aqui: tecnologias -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Fastify</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Node.js</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">React</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">SQL Server</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Prisma</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Tailwind CSS</span>
+              </div>
+              <!-- Edite aqui: imagens -->
+              <div class="project-gallery mt-4 flex gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible">
+                <img src="imgs/projetos/gerenciador_de_projetos/1.png" alt="Tela 1 do projeto Gerenciador de Projetos" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_projetos/2.png" alt="Tela 2 do projeto Gerenciador de Projetos" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_projetos/3.png" alt="Tela 3 do projeto Gerenciador de Projetos" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_projetos/4.png" alt="Tela 4 do projeto Gerenciador de Projetos" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_projetos/5.png" alt="Tela 5 do projeto Gerenciador de Projetos" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/gerenciador_de_projetos/6.png" alt="Tela 6 do projeto Gerenciador de Projetos" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+              </div>
+              <button
+                type="button"
+                data-open-project-modal
+                data-project-detail="Sistema de controle de tasks com quadro Kanban para visualizar atividades dos integrantes e dos grupos. Inclui visualização em diagrama Gantt para acompanhar atividades ao longo do tempo. Também calcula métricas para verificar atingimento de metas da equipe na empresa. Fui responsável pelo projeto completo, do front-end ao back-end."
+                class="mt-auto inline-flex items-center gap-2 rounded-xl border border-violet-400/40 bg-violet-500/15 px-4 py-2 text-sm font-medium text-violet-200 transition hover:bg-violet-500/25"
+              >
+                <i data-lucide="zoom-in" class="h-4 w-4"></i>
+                Ver detalhes
+              </button>
+            </div>
+          </article>
+
+          <article class="reveal-on-scroll flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0c1127]">
+            <img src="imgs/projetos/sigma/1.png" alt="Projeto Sigma" class="h-52 w-full object-cover" />
+            <div class="flex flex-1 flex-col p-5">
+              <!-- Edite aqui: titulo -->
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-bold text-white">Sigma</h3>
+                <span class="shrink-0 rounded-full border border-violet-400/40 bg-violet-500/10 px-2.5 py-1 text-[11px] font-medium text-violet-200">Atuação: Front-end</span>
+              </div>
+              <!-- Edite aqui: descricao -->
+              <p class="mt-2 text-sm leading-6 text-zinc-400">
+                Sistema de gerenciamento de materiais de campo para distribuidoras de energia, como medidores, cabos, conectores e transformadores.
+              </p>
+              <!-- Edite aqui: tecnologias -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">React</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">shadcn/ui</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Tailwind CSS</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">React Hook Form</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Redux</span>
+                <span class="rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300">Redux Toolkit</span>
+              </div>
+              <!-- Edite aqui: imagens -->
+              <div class="project-gallery mt-4 flex gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible">
+                <img src="imgs/projetos/sigma/1.png" alt="Tela 1 do projeto Sigma" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+                <img src="imgs/projetos/sigma/2.png" alt="Tela 2 do projeto Sigma" class="h-16 w-24 rounded-lg border border-white/10 object-cover" />
+              </div>
+              <button
+                type="button"
+                data-open-project-modal
+                data-project-detail="Sistema para gerenciamento de materiais de campo em empresas de distribuição de energia (por exemplo: medidores, cabos, conectores e transformadores). Ajuda a localizar materiais em campo e controlar toda movimentação entre equipes e entre equipes e almoxarifado. Fui responsável pelo front-end."
+                class="mt-auto inline-flex items-center gap-2 rounded-xl border border-violet-400/40 bg-violet-500/15 px-4 py-2 text-sm font-medium text-violet-200 transition hover:bg-violet-500/25"
+              >
+                <i data-lucide="zoom-in" class="h-4 w-4"></i>
+                Ver detalhes
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
       <!-- GRID HABILIDADES + EXPERIÊNCIA -->
       <section class="reveal-on-scroll grid gap-6 xl:grid-cols-[0.92fr_1.38fr]">
 
@@ -466,6 +648,43 @@
       </section>
     </main>
 
+    <div id="project-modal" class="project-modal fixed inset-0 z-[90] hidden items-center justify-center p-4 md:p-6" aria-hidden="true">
+      <div class="project-modal-backdrop absolute inset-0"></div>
+      <div class="project-modal-panel relative z-10 w-full max-w-6xl rounded-2xl border border-white/10 bg-[#070d20] p-4 shadow-2xl shadow-violet-950/50 md:p-6">
+        <div class="mb-4 flex items-center justify-between gap-3 border-b border-white/10 pb-4">
+          <h3 id="project-modal-title" class="text-lg font-bold text-white md:text-xl">Projeto</h3>
+          <button
+            type="button"
+            id="project-modal-close"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-zinc-300 transition hover:bg-white/10 hover:text-white"
+            aria-label="Fechar modal de projeto"
+          >
+            <i data-lucide="x" class="h-4 w-4"></i>
+          </button>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <div class="overflow-hidden rounded-xl border border-white/10 bg-[#0b132b]">
+              <img id="project-modal-main-image" src="" alt="Imagem ampliada do projeto" class="h-[300px] w-full object-contain md:h-[420px]" />
+            </div>
+            <div id="project-modal-thumbs" class="project-modal-thumbs mt-3 flex gap-2 overflow-x-auto pb-1"></div>
+          </div>
+
+          <div class="rounded-xl border border-white/10 bg-[#0c1127] p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Descrição</p>
+            <p id="project-modal-description" class="mt-2 text-sm leading-7 text-zinc-300"></p>
+
+            <p class="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Mais detalhes</p>
+            <p id="project-modal-detail" class="mt-2 text-sm leading-7 text-zinc-400"></p>
+
+            <p class="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Tecnologias</p>
+            <div id="project-modal-techs" class="mt-2 flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="border-t border-white/10">
       <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-sm text-zinc-400 md:flex-row md:items-center md:justify-between">
         <span class="inline-flex items-center gap-2">
@@ -511,6 +730,109 @@
 
       revealElements.forEach((element) => revealObserver.observe(element));
     }
+
+    const projectModal = document.getElementById("project-modal");
+    const projectModalTitle = document.getElementById("project-modal-title");
+    const projectModalDescription = document.getElementById("project-modal-description");
+    const projectModalDetail = document.getElementById("project-modal-detail");
+    const projectModalMainImage = document.getElementById("project-modal-main-image");
+    const projectModalTechs = document.getElementById("project-modal-techs");
+    const projectModalThumbs = document.getElementById("project-modal-thumbs");
+    const projectModalClose = document.getElementById("project-modal-close");
+    const projectModalBackdrop = projectModal.querySelector(".project-modal-backdrop");
+
+    const openProjectModal = (card, triggerButton) => {
+      const title = card.querySelector("h3")?.textContent?.trim() || "Projeto";
+      const description = card.querySelector("p")?.textContent?.trim() || "";
+      const detail = triggerButton.dataset.projectDetail || "Sem detalhes adicionais.";
+
+      const cardImages = Array.from(card.querySelectorAll(".project-gallery img")).map((image) => ({
+        src: image.getAttribute("src"),
+        alt: image.getAttribute("alt") || title,
+      }));
+      const heroImage = card.querySelector("img");
+      const allImages = heroImage
+        ? [{ src: heroImage.getAttribute("src"), alt: heroImage.getAttribute("alt") || title }, ...cardImages]
+        : cardImages;
+
+      const uniqueImages = allImages.filter(
+        (image, index, self) => image.src && self.findIndex((item) => item.src === image.src) === index
+      );
+
+      const techTags = Array.from(card.querySelectorAll("span")).map((tag) => tag.textContent.trim()).filter(Boolean);
+
+      projectModalTitle.textContent = title;
+      projectModalDescription.textContent = description;
+      projectModalDetail.textContent = detail;
+
+      projectModalTechs.innerHTML = "";
+      techTags.forEach((tag) => {
+        const element = document.createElement("span");
+        element.className = "rounded-full border border-white/10 bg-[#111938] px-3 py-1 text-xs text-zinc-300";
+        element.textContent = tag;
+        projectModalTechs.appendChild(element);
+      });
+
+      projectModalThumbs.innerHTML = "";
+      uniqueImages.forEach((image, index) => {
+        const thumbButton = document.createElement("button");
+        thumbButton.type = "button";
+        thumbButton.className = "project-thumb-btn rounded-lg border border-white/15";
+
+        const thumbImage = document.createElement("img");
+        thumbImage.src = image.src;
+        thumbImage.alt = image.alt;
+        thumbImage.className = "h-16 w-24 rounded-lg object-cover";
+        thumbButton.appendChild(thumbImage);
+
+        if (index === 0) {
+          projectModalMainImage.src = image.src;
+          projectModalMainImage.alt = image.alt;
+          thumbButton.classList.add("is-active");
+        }
+
+        thumbButton.addEventListener("click", () => {
+          projectModalMainImage.src = image.src;
+          projectModalMainImage.alt = image.alt;
+          projectModalThumbs.querySelectorAll(".project-thumb-btn").forEach((button) => button.classList.remove("is-active"));
+          thumbButton.classList.add("is-active");
+        });
+
+        projectModalThumbs.appendChild(thumbButton);
+      });
+
+      projectModal.classList.remove("hidden");
+      projectModal.classList.add("flex");
+      projectModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeProjectModal = () => {
+      projectModal.classList.add("hidden");
+      projectModal.classList.remove("flex");
+      projectModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    document.querySelectorAll("[data-open-project-modal]").forEach((button) => {
+      const card = button.closest("article");
+      button.addEventListener("click", () => openProjectModal(card, button));
+
+      const clickableImages = card.querySelectorAll("img");
+      clickableImages.forEach((image) => {
+        image.classList.add("cursor-zoom-in");
+        image.addEventListener("click", () => openProjectModal(card, button));
+      });
+    });
+
+    projectModalClose.addEventListener("click", closeProjectModal);
+    projectModalBackdrop.addEventListener("click", closeProjectModal);
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !projectModal.classList.contains("hidden")) {
+        closeProjectModal();
+      }
+    });
     </script>
 </body>
 </html>
+
